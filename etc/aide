@@ -1,0 +1,82 @@
+Structurer un projet **backend + frontend** dans VS Code revient à organiser ton code de manière claire et modulaire pour éviter le chaos. Voici une approche pratique et progressive :
+
+---
+
+## 📂 Structure typique d’un projet
+
+### 1. Racine du projet
+```
+mon-projet/
+│── backend/
+│── frontend/
+│── README.md
+│── .gitignore
+│── package.json (optionnel si tu gères les deux avec npm)
+```
+
+---
+
+### 2. Dossier **backend**
+Le backend gère la logique, la base de données et les API.
+
+```
+backend/
+│── src/
+│   │── controllers/   # Logique métier
+│   │── models/        # Schémas de données (MongoDB, SQL…)
+│   │── routes/        # Définition des endpoints API
+│   │── utils/         # Fonctions utilitaires
+│   │── app.js         # Point d’entrée (Express, NestJS…)
+│── config/            # Configurations (DB, variables env)
+│── tests/             # Tests unitaires
+│── package.json
+```
+
+---
+
+### 3. Dossier **frontend**
+Le frontend gère l’interface utilisateur (React, Vue, Angular…).
+
+```
+frontend/
+│── public/            # Fichiers statiques (index.html, images…)
+│── src/
+│   │── components/    # Composants UI
+│   │── pages/         # Pages principales
+│   │── services/      # Appels API vers le backend
+│   │── styles/        # CSS/Tailwind
+│   │── App.js         # Point d’entrée React/Vue
+│── package.json
+```
+
+---
+
+## ⚙️ Configuration dans VS Code
+
+1. **Ouvrir le dossier racine** → `mon-projet/`
+2. Installer les extensions utiles :
+   - *Prettier* (formatage)
+   - *ESLint* (qualité du code)
+   - *REST Client* (tester les API)
+   - *Tailwind CSS IntelliSense* (si tu utilises Tailwind)
+3. Créer deux terminaux intégrés :
+   - Terminal 1 → `cd backend && npm run dev`
+   - Terminal 2 → `cd frontend && npm start`
+4. Utiliser un **workspace VS Code** pour gérer les deux projets ensemble :
+   - `Fichier > Ajouter un dossier au workspace…`
+
+---
+
+## 🔗 Communication entre backend et frontend
+- Le backend expose des routes API (ex: `http://localhost:5000/api/users`).
+- Le frontend consomme ces routes via `fetch` ou `axios`.
+- Tu peux configurer un **proxy** dans `frontend/package.json` :
+```json
+"proxy": "http://localhost:5000"
+```
+
+---
+
+👉 Astuce : commence par un petit projet (ex: Todo List) pour tester la structure. Ensuite, tu pourras ajouter des couches (authentification, base de données, déploiement).
+
+Veux-tu que je te prépare un **exemple concret minimaliste** (backend Express + frontend React) avec les fichiers de base pour que tu puisses copier-coller et démarrer rapidement ?

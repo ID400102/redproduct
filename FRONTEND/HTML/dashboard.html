@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dashboard</title>
+</head>
+
+    <!-- <section>
+        <div class="absolute  inset-0 bg-[#1E2022]"></div>   
+        <img src="/etc/motif.png" alt="motif" class="absolute inset-0 w-full h-screen object-cover opacity-20">
+    </section>    -->
+
+<body class="bg-gray-100">
+
+  <!-- Container -->
+  <div class="flex flex-row md:flex-row ">
+
+    <!-- Sidebar (mobile: top bar, desktop: left bar) -->
+    <aside class="inset-0 bg-[#1E2022] bg-[url('/etc/motif.png')] bg-blend-multiply bg-cover bg-center bg-no-repeat  text-white flex md:flex-col h-screen justify-between md:justify-start md:w-64">
+
+      <!-- Top bar / Sidebar header -->
+      <div class="flex items-start gap-2 w-full md:items-center block p-4 md:p-6">
+        <button class=" md:hidden text-white focus:outline-none">
+          ☰
+        </button>
+        <div class="hidden flex  gap-2 sm: flex-row justify-between items-center">
+        <img src="/etc/logo.png" alt="logo redproduct ">
+        <h1 class="text-xl md:text-2xl font-bold">RED PRODUCT</h1>
+        </div>
+        <!-- Hamburger visible en mobile -->
+      </div>
+      <!-- Navigation (hidden on mobile by default, visible on desktop) -->
+      <nav class="hidden md:block space-y-2 px-6">
+        <p class="md:text-3xl mb-6">Principal</p>
+        <div class="flex items-center gap-2 md:text-2xl ">
+          <img src="/etc/dashboard.png" alt="dashboardpng" class="w-5 h-5">
+          <a href="dashboard.html" class="block py-2 text-white">Dashboard</a>
+        </div>
+        <div class="flex items-center gap-2 md:text-2xl">
+          <img src="/etc/gaming.png" alt="gamingpng" class="w-5 h-5 filter brightness-0 invert">
+        <a href="hotel.html" class="block py-2 ">Liste des hôtels</a>
+        </div>
+      </nav>
+      <!-- Profil utilisateur -->
+      <div class="hidden md:flex  mb-20 mr-2 border-t border-gray-700 p-4 items-center space-x-3 mt-auto">
+        <div class="w-10 h-10 bg-[url('/etc/badiane.jpg')] rounded-full"></div>
+        <div>
+          <p class="text-sm font-semibold md:text-lg">Mouhamet Badiane</p>
+          <p class="text-xs text-green-400 md:text-lg">en ligne</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 md:  overflow-y-auto">
+      <nav class="bg-white">
+            <!-- Header -->
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <h2 class="text-xl md:text-2xl rounded-lg font-bold m-4">Dashboard</h2>
+        <div class="flex items-center justify-between gap-2 mr-2 md: mr-8 ">
+          <input type="text" placeholder="Recherche..." class="border rounded-full px-4 py-2 m-4 w-[50%] md:w-64 focus:outline-none focus:ring-2 focus:ring-gray-500">
+          <img src="/etc/cloche.png" alt="cloche">
+          <div class="w-10 h-10 bg-[url('/etc/badiane.jpg')] rounded-full"></div>
+          <a href="index.html"> </a>
+        </div>
+      </div>
+
+      <!-- Welcome -->
+      <div class="mb-6 border p-4">
+        <h3 class="text-lg md:text-xl font-semibold">Bienvenue sur RED Product</h3>
+        <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur.</p>
+      </div>
+      </nav>
+      <!-- Cards -->
+      <div class=" m-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="bg-white text-gray-600 p-6 rounded-lg shadow flex gap-6">
+          <div class="w-12 h-12 rounded-full bg-[#A88ADD] flex items-center justify-center">
+            <img src="/etc/mail.png" alt="mail" class="w-5 h-5">
+          </div>
+          <div>
+            <h4 class="text-lg "><span class="font-semibold text-2xl">125</span> Formulaires</h4>
+            <p>Je ne sais pas quoi mettre</p>
+          </div>   
+        </div>
+        <!-- Card 1 -->
+
+        <!-- Card 2 -->
+        <div class="bg-white text-gray-600 p-6 rounded-lg shadow flex gap-6">
+          <div class="w-12 h-12 rounded-full bg-[#0CC2AA] flex items-center justify-center">
+            <img src="/etc/P.png" alt="mail" class="w-4 h-4">
+          </div>
+          <div>
+            <h4 class="text-lg "><span class="font-semibold text-2xl">40</span> Messages</h4>
+            <p>Je ne sais pas quoi mettre</p>
+          </div>   
+        </div>        
+        <!-- Card 2 -->
+        
+        <!-- Card 3 -->
+        <div class="bg-white text-gray-600 p-6 rounded-lg shadow flex gap-6">
+          <div class="w-12 h-12 rounded-full bg-[#FCC100] flex items-center justify-center">
+            <img src="/etc/user.png" alt="mail" class="w-4 h-3 ">
+          </div>
+          <div>
+            <h4 class="text-lg "><span class="font-semibold text-2xl">600</span> utilisateurs</h4>
+            <p>Je ne sais pas quoi mettre</p>
+          </div>   
+        </div>        
+        <!-- Card 3 -->
+        
+        <!-- Card 4 -->
+        <div class="bg-white text-gray-600 p-6 rounded-lg shadow flex gap-6">
+          <div class="w-12 h-12 rounded-full bg-[#F90000] flex items-center justify-center">
+            <img src="/etc/mail.png" alt="mail" class="w-5 h-5">
+          </div>
+          <div>
+            <h4 class="text-lg "><span class="font-semibold text-2xl">25</span> Emails</h4>
+            <p>Je ne sais pas quoi mettre</p>
+          </div>   
+        </div>        
+        <!-- Card 4 -->
+        
+        <!-- Card 5 -->
+        <div class="bg-white text-gray-600 p-6 rounded-lg shadow flex gap-6">
+          <div class="w-12 h-12 rounded-full bg-[#9C27B0] flex items-center justify-center">
+            <img src="/etc/P.png" alt="mail" class="w-4 h-4">
+          </div>
+          <div>
+            <h4 class="text-lg "><span class="font-semibold text-2xl">40</span> hotels</h4>
+            <p>Je ne sais pas quoi mettre</p>
+          </div>   
+        </div>        
+        <!-- Card 5 -->
+        
+        <!-- Card 6 -->
+        <div class="bg-white text-gray-600 p-6 rounded-lg shadow flex gap-6">
+          <div class="w-12 h-12 rounded-full bg-[#1565C0] flex items-center justify-center">
+            <img src="/etc/user.png" alt="mail" class="w-4 h-3">
+          </div>
+          <div>
+            <h4 class="text-lg "><span class="font-semibold text-2xl">02</span> Entites</h4>
+            <p>Je ne sais pas quoi mettre</p>
+          </div>   
+        </div>        
+        <!-- Card 6 -->
+        
+      </div>
+    </main>
+  </div>
+</body>
+</html>

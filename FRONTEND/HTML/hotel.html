@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dashboard</title>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Container -->
+  <div class="flex flex-row lg:flex-row ">
+
+
+    <aside class="hidden inset-0 bg-[#1E2022] bg-[url('/etc/motif.png')] bg-blend-multiply bg-cover bg-center bg-no-repeat left-0 text-white flex lg:block flex-col  justify-between ">
+
+      <!-- Top bar / Sidebar header -->
+      <div class="flex items-start gap-2 w-full md:items-center block p-4 md:p-6">
+        <div class="flex  gap-2 sm: flex-row justify-between items-center">
+        <img src="/etc/logo.png" alt="logo redproduct ">
+        <h1 class="text-xl md:text-2xl font-bold">RED PRODUCT</h1>
+        </div>
+        <!-- Hamburger visible en mobile -->
+      </div>
+      <!-- Navigation (hidden on mobile by default, visible on desktop) -->
+      <nav class="lg:block space-y-2 px-6">
+        <p class="md:text-3xl mb-6">Principal</p>
+        <div class="flex items-center gap-2 md:text-2xl ">
+          <img src="/etc/dashboard.png" alt="dashboardpng" class="w-5 h-5">
+          <a href="dashboard.html" class="block py-2 text-white">Dashboard</a>
+        </div>
+        <div class="flex items-center gap-2 md:text-2xl">
+          <img src="/etc/gaming.png" alt="gamingpng" class="w-5 h-5 filter brightness-0 invert">
+        <a href="hotel.html" class="block py-2 ">Liste des hôtels</a>
+        </div>
+      </nav>
+      <!-- Profil utilisateur -->
+      <div class="md:flex  mb-20 mr-2 border-t border-gray-700 p-4 items-center space-x-3 mt-auto">
+        <div class="w-10 h-10 bg-[url('/etc/badiane.jpg')] rounded-full"></div>
+        <div>
+          <p class="text-sm font-semibold md:text-lg">Mouhamet Badiane</p>
+          <p class="text-xs text-green-400 md:text-lg">en ligne</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 lg:overflow-y-auto">
+      <nav class="bg-white">
+            <!-- Header --> 
+      <div class="flex md:flex-row justify-between items-center">
+      <button class=" md:block lg:hidden text-white focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+          class="w-8 h-8 text-black" 
+          fill="currentColor" 
+          viewBox="0 0 24 24">
+          <path d="M3 6h18M3 12h18M3 18h18" 
+          stroke="currentColor" 
+          stroke-width="2" 
+          stroke-linecap="round"/>
+        </svg>
+      </button>
+        <h1 class="font-bold text-2xl pl-6 hidden lg:block">Liste des hotels</h1>
+        <div class="flex items-center justify-between gap-2 mr-2 md: mr-7 ">
+          <input type="text" placeholder="Recherche..." class="border rounded-full px-4 py-2 m-4 w-[50%] md:w-64 focus:outline-none ">
+          <img src="/etc/cloche.png" alt="cloche">
+          <div class="w-10 h-10 bg-[url('/etc/badiane.jpg')] rounded-full"></div>
+          <a href="index.html"><img src="/etc/logout.png" alt="logout"></a>
+        </div>
+      </div>
+
+      <!-- Ajout hotel -->
+        <div class="flex p-4 gap-10 items-center md:justify-between  gap-10 ">
+            <div class=" gap-2 pl-2 flex items-center">
+                <h3 class="text-lg md:text-xl font-semibold">Hotels</h3>
+                <p class="text-gray-600">8</p>
+            </div>
+            <button onclick="document.getElementById('hotelModal').classList.remove('hidden')" 
+                    class="bg-white text-black text-sm p-1 rounded-lg shadow flex items-center justify-center hover:bg-gray-300 sm:text-lg md: mr-2">Créer un nouveau hôtel
+            </button>
+        </div>
+            <!-- Modal -->
+<div id="hotelModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg w-96 p-6 relative">
+    <!-- Bouton fermer -->
+    <button onclick="document.getElementById('hotelModal').classList.add('hidden')" 
+            class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+      ✕
+    </button>
+
+    <!-- Contenu du modal -->
+    <h2 class="text-xl font-bold mb-4">Ajouter un hôtel</h2>
+    <form class="space-y-4 md: grid grid-cols-2 gap-8 items-center justify-between ">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Nom de l’hôtel</label>
+        <input type="text" class="w-full border outline-none rounded px-3 py-2 ">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Adresse</label>
+        <input type="text" class="w-full border outline-none rounded px-3 py-2 ">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" class="w-full border outline-none rounded px-3 py-2 ">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Numero de telephone</label>
+        <input type="tel" class="w-full border outline-none rounded px-3 py-2 ">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Prix par nuit (XOF)</label>
+        <input type="number" class="w-full border rounded px-3 py-2 ">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Devise</label>
+            <select class="w-full border outline-none rounded px-3 py-2 ">
+              <option value="XOF">XOF (Franc CFA)</option>
+              <option value="EUR">EUR (Euro)</option>
+              <option value="USD">USD (Dollar US)</option>
+            </select>
+        <div>
+            <label class="block text-sm font-medium text-gray-700">Ajouter une image</label>
+            <input type="file" accept="image/*"
+                class="w-full border outline-none rounded px-3 py-2 ">
+        </div>
+
+      <button type="submit" class="w-full bg-white border text-black py-2 rounded-lg hover:bg-gray-300">
+        Enregistrer
+      </button>
+    </form>
+  </div>
+</div>
+      </nav>
+      <!-- Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 ">
+  <!-- Hôtel Terrou-Bi -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="/etc/image1.png" alt="Hôtel Terrou-Bi" class="w-full h-40 object-cover">
+    <div class="p-4">
+        <p class="text-sm text-gray-600">Boulevard Martin Luther King Dakar, 11500</p>
+      <h3 class="text-lg font-bold"><a href="detail.html"> Hôtel Terrou-Bi</a></h3>
+      <p class="text-sm font-semibold text-gray-800 mt-2">25 000 XOF par nuit</p>
+    </div>
+  </div>
+
+  <!-- King Fahd Palace -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="/etc/image2.png" alt="King Fahd Palace" class="w-full h-40 object-cover">
+    <div class="p-4">
+        <p class="text-sm text-gray-600">Rte des Almadies, Dakar</p>
+      <h3 class="text-lg font-bold">King Fahd Palace</h3>
+      <p class="text-sm font-semibold text-gray-800 mt-2">20 000 XOF par nuit</p>
+    </div>
+  </div>
+
+  <!-- Radisson Blu Hotel -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="/etc/image3.png" alt="Radisson Blu Hotel" class="w-full h-40 object-cover">
+    <div class="p-4">
+        <p class="text-sm text-gray-600">Rte de la Corniche O, Dakar 16868</p>
+      <h3 class="text-lg font-bold">Radisson Blu Hotel</h3>
+      <p class="text-sm font-semibold text-gray-800 mt-2">22 000 XOF par nuit</p>
+    </div>
+  </div>
+
+  <!-- Pullman Dakar Teranga -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="/etc/image4.png" alt="Pullman Dakar Teranga" class="w-full h-40 object-cover">
+    <div class="p-4">
+        <p class="text-sm text-gray-600">Place de l’Indépendance, 10 Rue PL 29, Dakar</p>
+      <h3 class="text-lg font-bold">Pullman Dakar Teranga</h3>
+      <p class="text-sm font-semibold text-gray-800 mt-2">30 000 XOF par nuit</p>
+    </div>
+  </div>
+
+  <!-- Hôtel Lac Rose -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="/etc/image5.png" alt="Hôtel Lac Rose" class="w-full h-40 object-cover">
+    <div class="p-4">
+        <p class="text-sm text-gray-600">Lac Rose, Dakar</p>
+      <h3 class="text-lg font-bold">Hôtel Lac Rose</h3>
+      <p class="text-sm font-semibold text-gray-800 mt-2">25 000 XOF par nuit</p>
+    </div>
+  </div>
+
+  <!-- Hôtel Saly -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="/etc/image6.png" alt="Hôtel Saly" class="w-full h-40 object-cover">
+    <div class="p-4">
+        <p class="text-sm text-gray-600">Mbour, Sénégal</p>
+      <h3 class="text-lg font-bold">Hôtel Saly</h3>
+      <p class="text-sm font-semibold text-gray-800 mt-2">20 000 XOF par nuit</p>
+    </div>
+  </div>
+
+  <!-- Palm Beach Resort & Spa -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="/etc/image7.png" alt="Palm Beach Resort & Spa" class="w-full h-40 object-cover">
+    <div class="p-4">
+        <p class="text-sm text-gray-600">BP64, Saly 23000</p>
+      <h3 class="text-lg font-bold">Palm Beach Resort & Spa</h3>
+      <p class="text-sm font-semibold text-gray-800 mt-2">22 000 XOF par nuit</p>
+    </div>
+  </div>
+
+  <!-- Pullman Dakar Teranga (doublon) -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <img src="/etc/image8.png" alt="Pullman Dakar Teranga" class="w-full h-40 object-cover">
+    <div class="p-4">
+        <p class="text-sm text-gray-600">Place de l’Indépendance, 10 Rue PL 29, Dakar</p>
+      <h3 class="text-lg font-bold">Pullman Dakar Teranga</h3>
+      <p class="text-sm font-semibold text-gray-800 mt-2">30 000 XOF par nuit</p>
+    </div>
+  </div>
+</div>
+
+    </main>
+  </div>
+</body>
+</html>
