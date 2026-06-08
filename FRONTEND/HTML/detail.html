@@ -1,86 +1,132 @@
-<!Doctype html>
+<!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Hotels</title>
-</head>
-<body>
-<div class="min-h-screen bg-[#1E2022] text-white flex flex-col">
-  <!-- Header -->
-  <header class="bg-white p-4 flex justify-between items-center">
-    <h1 class="text-[#1E2022] text-xl md:text-2xl font-bold">RED PRODUCT</h1>
-    <button class="bg-white text-[#1E2022] px-4 py-2 rounded-lg shadow  hover:bg-gray-300 transition">
-        <a href="hotel.html">Retour</a>
-    </button>
-  </header>
+  </head>
+  <body>
+    <div class="min-h-screen bg-[#1E2022] text-white flex flex-col">
+      <!-- Header -->
+      <header class="bg-white p-4 flex justify-between items-center">
+        <h1 class="text-[#1E2022] text-xl md:text-2xl font-bold">
+          RED PRODUCT
+        </h1>
+        <button
+          class="bg-white text-[#1E2022] px-4 py-2 rounded-lg shadow hover:bg-gray-300 transition"
+        >
+          <a href="hotel.html">Retour</a>
+        </button>
+      </header>
 
-  <!-- Contenu principal -->
-  <main class="flex-1 p-6">
-    <!-- Carte de détails -->
-    <div class="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden max-w-3xl mx-auto">
-      <!-- Image -->
-      <img src="/etc/image1.png" alt="Hôtel Terrou-Bi" class="w-full h-64 object-cover">
+      <!-- Contenu principal -->
+      <main class="flex-1 p-6">
+        <!-- Carte de détails -->
+        <div
+          class="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden max-w-3xl mx-auto"
+        >
+          <!-- Image -->
+          <img
+            src="/etc/image1.png"
+            alt="Hôtel Terrou-Bi"
+            class="w-full h-64 object-cover"
+          />
 
-      <!-- Infos -->
-      <div class="p-6">
-        <h2 class="text-2xl font-bold text-[#1E2022]">Hôtel Terrou-Bi</h2>
-        <p class="text-gray-600 mt-2">Boulevard Martin Luther King Dakar, 11500</p>
-        <p class="text-lg font-semibold text-[#1E2022] mt-4">25 000 XOF par nuit</p>
+          <!-- Infos -->
+          <div class="p-6">
+            <h2 class="text-2xl font-bold text-[#1E2022]">Hôtel Terrou-Bi</h2>
+            <p class="text-gray-600 mt-2">
+              Boulevard Martin Luther King Dakar, 11500
+            </p>
+            <p class="text-lg font-semibold text-[#1E2022] mt-4">
+              25 000 XOF par nuit
+            </p>
 
-        <!-- Description -->
-        <p class="text-gray-700 mt-4">
-          Situé en bord de mer, l’Hôtel Terrou-Bi offre un cadre luxueux avec piscine, restaurant gastronomique et accès direct à la plage. 
-          Idéal pour un séjour d’affaires ou de détente à Dakar.
-        </p>
+            <!-- Description -->
+            <p class="text-gray-700 mt-4">
+              Situé en bord de mer, l’Hôtel Terrou-Bi offre un cadre luxueux
+              avec piscine, restaurant gastronomique et accès direct à la plage.
+              Idéal pour un séjour d’affaires ou de détente à Dakar.
+            </p>
 
-        <!-- Boutons -->
-        <div class="mt-6 flex gap-4">
-          <button onclick="document.getElementById('reservationModal').classList.remove('hidden')" 
-                  class="bg-[#1E2022] text-white px-4 py-2 rounded-lg shadow hover:bg-gray-700 transition">
-            Réserver
-          </button>
-          <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg shadow hover:bg-gray-400 transition">
-            Ajouter aux favoris
-          </button>
+            <!-- Boutons -->
+            <div class="mt-6 flex gap-4">
+              <button
+                onclick="
+                  document
+                    .getElementById('reservationModal')
+                    .classList.remove('hidden')
+                "
+                class="bg-[#1E2022] text-white px-4 py-2 rounded-lg shadow hover:bg-gray-700 transition"
+              >
+                Réserver
+              </button>
+              <button
+                class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg shadow hover:bg-gray-400 transition"
+              >
+                Ajouter aux favoris
+              </button>
+            </div>
+          </div>
         </div>
+      </main>
+    </div>
+
+    <!-- Modal de réservation -->
+    <div
+      id="reservationModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-lg shadow-lg w-96 p-6 relative">
+        <!-- Bouton fermer -->
+        <button
+          onclick="
+            document.getElementById('reservationModal').classList.add('hidden')
+          "
+          class="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+        >
+          ✕
+        </button>
+
+        <!-- Contenu du modal -->
+        <h2 class="text-xl font-bold mb-4 text-[#1E2022]">
+          Réserver Hôtel Terrou-Bi
+        </h2>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nom</label>
+            <input
+              type="text"
+              class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#A88ADD] focus:outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700"
+              >Date d’arrivée</label
+            >
+            <input
+              type="date"
+              class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#A88ADD] focus:outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700"
+              >Date de départ</label
+            >
+            <input
+              type="date"
+              class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#A88ADD] focus:outline-none"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-[#A88ADD] text-white py-2 rounded-lg hover:bg-[#8c6fc7]"
+          >
+            Confirmer la réservation
+          </button>
+        </form>
       </div>
     </div>
-  </main>
-</div>
-
-<!-- Modal de réservation -->
-<div id="reservationModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
-  <div class="bg-white rounded-lg shadow-lg w-96 p-6 relative">
-    <!-- Bouton fermer -->
-    <button onclick="document.getElementById('reservationModal').classList.add('hidden')" 
-            class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
-      ✕
-    </button>
-
-    <!-- Contenu du modal -->
-    <h2 class="text-xl font-bold mb-4 text-[#1E2022]">Réserver Hôtel Terrou-Bi</h2>
-    <form class="space-y-4">
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Nom</label>
-        <input type="text" class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#A88ADD] focus:outline-none">
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Date d’arrivée</label>
-        <input type="date" class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#A88ADD] focus:outline-none">
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Date de départ</label>
-        <input type="date" class="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#A88ADD] focus:outline-none">
-      </div>
-      <button type="submit" class="w-full bg-[#A88ADD] text-white py-2 rounded-lg hover:bg-[#8c6fc7]">
-        Confirmer la réservation
-      </button>
-    </form>
-  </div>
-</div>
-
-
-</body>
-</html> 
+  </body>
+</html>

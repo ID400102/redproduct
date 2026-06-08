@@ -1,54 +1,80 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Mot de passe oublie</title>
-</head>
-<body>
-    <section class="relative h-screen flex flex-col items-center justify-center  pt-16 z-10 ">
-        <!--background degrade-->
-        <div class="absolute  inset-0 bg-[#1E2022]"></div>   
-        <img src="/etc/motif.png" alt="motif" class="absolute inset-0 w-full h-screen object-cover opacity-20">
-        <!--background degrade-->
+  </head>
+  <body>
+    <section
+      class="relative h-screen flex flex-col items-center justify-center pt-16 z-10"
+    >
+      <!--background degrade-->
+      <div class="absolute inset-0 bg-[#1E2022]"></div>
+      <img
+        src="/etc/motif.png"
+        alt="motif"
+        class="absolute inset-0 w-full h-screen object-cover opacity-20"
+      />
+      <!--background degrade-->
 
-    <div class="flex flex-col z-30 space-y-4 items-center justify-center ">
-
+      <div class="flex flex-col z-30 space-y-4 items-center justify-center">
         <div class="flex gap-2 text-center">
-            <img src="/etc/logo.png" alt="logo redproduct " class=" w-10  bottom-0">
-            <h1 class="font-bold text-white/80 m: text-2xl md:text-4xl">RED PRODUCT</h1>
+          <img
+            src="/etc/logo.png"
+            alt="logo redproduct "
+            class="w-10 bottom-0"
+          />
+          <h1 class="font-bold text-white/80 m: text-2xl md:text-4xl">
+            RED PRODUCT
+          </h1>
         </div>
 
-    <div class="bg-white shadow-lg rounded-lg w-[80%] md:w-full max-w-lg p-6  ">
-    
-    <!-- Formulaire -->
-    <form class=" space-y-8 ">
-        <p class="text-gray-700 font-semibold mb-6 text-lg sm:text-xl md:text-2xl">Mot de passe oublie ?</p>
-        <p class="text-lg sm:text-xl md:text-2xl">Entrez votre adresse e-mail ci-dessous et nous vous envoyons des instructions sur la façon de modifier votre mot de passe.</p>
-        <!-- Email -->
-        <div class="text-gray-700 text-lg sm:text-xl md:text-2xl">
-            <label for="email">Votre Email</label>
-            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300  shadow-sm focus:border-red-500 focus:ring-red-500 p-2" />
+        <div
+          class="bg-white shadow-lg rounded-lg w-[80%] md:w-full max-w-lg p-6"
+        >
+          <!-- Formulaire -->
+          <form class="space-y-8">
+            <p
+              class="text-gray-700 font-semibold mb-6 text-lg sm:text-xl md:text-2xl"
+            >
+              Mot de passe oublie ?
+            </p>
+            <p class="text-lg sm:text-xl md:text-2xl">
+              Entrez votre adresse e-mail ci-dessous et nous vous envoyons des
+              instructions sur la façon de modifier votre mot de passe.
+            </p>
+            <!-- Email -->
+            <div class="text-gray-700 text-lg sm:text-xl md:text-2xl">
+              <label for="email">Votre Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2"
+              />
+            </div>
+
+            <!-- Bouton -->
+            <button
+              type="submit"
+              class="w-full bg-gray-800 text-white py-2 px-4 rounded-md text-lg sm:text-xl md:text-2xl hover:bg-gray-700 transition"
+            >
+              Envoyer
+            </button>
+          </form>
         </div>
-    
-    <!-- Bouton -->
-    <button type="submit"
-    class="w-full bg-gray-800 text-white py-2 px-4 rounded-md text-lg sm:text-xl md:text-2xl hover:bg-gray-700 transition">
-    Envoyer
-</button>
-</form>
-</div>
-    <!-- Lien inscription -->
-    <p class="mt-6 text-center texT-lg sm:text-xl text-gray-300">
-        Revenir a la 
-        <a href="index.html" class="text-[#FFD964] hover:underline">Connexion</a>
-    </p>
-    </div>
+        <!-- Lien inscription -->
+        <p class="mt-6 text-center texT-lg sm:text-xl text-gray-300">
+          Revenir a la
+          <a href="index.html" class="text-[#FFD964] hover:underline"
+            >Connexion</a
+          >
+        </p>
+      </div>
+    </section>
 
-
-</section>
-
-<script src="/FRONTEND/JAVASCRIPT/redproduct.js"></script>
-</body>
+    <script src="/FRONTEND/JAVASCRIPT/redproduct.js"></script>
+  </body>
 </html>

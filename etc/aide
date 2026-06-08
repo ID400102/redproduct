@@ -25,7 +25,7 @@ backend/
 │   │── controllers/   # Logique métier
 │   │── models/        # Schémas de données (MongoDB, SQL…)
 │   │── routes/        # Définition des endpoints API
-│   │── utils/         # Fonctions utilitaires
+│   │── utils/         # Fonctions utilitaires 
 │   │── app.js         # Point d’entrée (Express, NestJS…)
 │── config/            # Configurations (DB, variables env)
 │── tests/             # Tests unitaires
