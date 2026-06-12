@@ -79,4 +79,162 @@ frontend/
 
 👉 Astuce : commence par un petit projet (ex: Todo List) pour tester la structure. Ensuite, tu pourras ajouter des couches (authentification, base de données, déploiement).
 
-Veux-tu que je te prépare un **exemple concret minimaliste** (backend Express + frontend React) avec les fichiers de base pour que tu puisses copier-coller et démarrer rapidement ?
+---
+https://coda.io/d/_djMNe-k-pES/Backend-Node-js_su8PKw1m
+
+🚀 Semaine Backend Node.js – Plan de travail
+🧩 Tâche 1 — Initialisation du projet
+Objectif : Mettre en place une base propre
+À faire :
+Initialiser le projet Node.js (npm init)
+Installer les dépendances :
+express
+dotenv
+cors
+mongoose (ou prisma si tu préfères)
+bcrypt
+jsonwebtoken
+nodemailer
+Créer l’architecture :
+src/
+ ├── controllers/
+ ├── routes/
+ ├── models/
+ ├── middlewares/
+ ├── services/
+ ├── utils/
+ └── app.js
+Configurer :
+.env
+connexion à la base de données
+serveur Express
+⁠
+🔐 Tâche 2 — Modèle User + Auth (inscription & login)
+Objectif : Gérer les comptes admin
+À faire :
+Modèle User :
+name
+email (unique)
+password (hashé)
+role (admin)
+createdAt
+Endpoints :
+POST /api/auth/register
+POST /api/auth/login
+Logique :
+Hash password avec bcrypt
+Vérifier email unique
+Générer un JWT après login
+⁠
+🔑 Tâche 3 — Middleware d’authentification
+Objectif : Protéger les routes
+À faire :
+Créer middleware authMiddleware
+Vérifier le token JWT
+Injecter req.user
+⁠
+🚪 Tâche 4 — Déconnexion
+👉 (Simple mais important pour compréhension)
+Endpoint :
+POST /api/auth/logout
+Logique :
+Côté backend :
+soit blacklist token (option avancée)
+soit juste réponse OK (frontend supprime token)
+⁠
+🔁 Tâche 5 — Mot de passe oublié
+Objectif : Flow complet reset password
+Endpoints :
+POST /api/auth/forgot-password
+POST /api/auth/reset-password
+Logique :
+Générer un token temporaire
+Envoyer email avec lien (nodemailer)
+Sauvegarder token + expiration
+Reset password avec vérification token
+⁠
+👤 Tâche 6 — Profil utilisateur connecté
+Endpoint :
+GET /api/users/me
+Logique :
+Utiliser req.user
+Retourner infos user (sans password)
+⁠
+📊 Tâche 7 — Dashboard KPI
+Objectif : Alimenter la page dashboard
+Endpoint :
+GET /api/dashboard/kpis
+Retour attendu (mock ou réel) :
+{
+  "users": 600,
+  "hotels": 40,
+  "messages": 40,
+  "emails": 25,
+  "entities": 2,
+  "forms": 125
+}
+👉 Tu peux :
+soit mocker
+soit compter depuis la DB (countDocuments())
+⁠
+🏨 Tâche 8 — Modèle Hôtel
+Champs :
+name
+address
+email
+phone
+pricePerNight
+currency
+image
+createdBy
+⁠
+📋 Tâche 9 — Liste des hôtels
+Endpoint :
+GET /api/hotels
+Fonctionnalités :
+Pagination
+Recherche (optionnel)
+Tri (optionnel)
+⁠
+➕ Tâche 10 — Ajouter un hôtel
+Endpoint :
+POST /api/hotels
+À gérer :
+Validation des champs
+Upload image (optionnel : multer / cloudinary)
+Associer createdBy
+⁠
+🔒 Tâche 11 — Sécurisation globale
+À faire :
+Protéger toutes les routes sauf auth
+Validation avec Joi ou Zod
+Gestion des erreurs globale
+⁠
+🌐 Tâche 12 — Déploiement sur Render
+Objectif : Mettre l’API en ligne
+Étapes :
+Push sur GitHub
+Créer service sur Render
+Configurer :
+Build command: npm install
+Start command: node src/app.js
+Ajouter variables d’environnement :
+DB_URI
+JWT_SECRET
+EMAIL configs
+Tester endpoints via Postman
+⁠
+🧪 Tâche 13 — Tests API
+À faire :
+Tester tous les endpoints avec Postman
+Vérifier :
+Auth fonctionne
+Routes protégées
+CRUD hôtel OK
+⁠
+🎯 Résultat attendu en fin de semaine
+API fonctionnelle
+Auth complète (login, logout, forgot password)
+Dashboard alimenté
+CRUD hôtel (list + create)
+API déployée sur Render
