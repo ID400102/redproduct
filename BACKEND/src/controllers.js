@@ -1,6 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
-const User = require("./models")
+const user = require("./models")
 const userValidation = require("./validation")
 
 /**
@@ -12,8 +12,8 @@ exports.inscription = (req, res) => {
 
     // recuperer les donnees 
     const {body} = req
-    // recuperer les donnees 
-    const {error} = userValidation(body)
+    // valider les donnees 
+    const {error} = userValidation(body).userValidationSignUp
     if(error) return res.status(401).json(error.details[0].message)
     
     // hash du mot de passe
@@ -40,5 +40,27 @@ exports.inscription = (req, res) => {
  * @param {express.Response} res 
  */
 exports.connexion = (req, res) => {
-    res.send("connexion reussie")
+    const {email, password} = req.body 
+    // validation des donnees
+
+    const {error} = userValidation(req.body).userValidationLogin
+    if(error) return res.status(401).json(error.details[0].message)
+    // console.log(req.body);
+    
+    // trouver les users dans la base de donnees
+    user.find({email : email})
+    .then(user => {
+        if(!user) return res.status(404).json({msg : "L'utilisateur n'a pas ete retrouve"})
+        
+        // verification du mot de passe
+        bcrypt.compare(password, user.password)
+        .then(match => {
+            if(!match) return res.status(500).json({msg : "erreur serveur"})
+            
+        })
+        .catch(error => res.status(500).json(error))
+    })
+    .catch(error => res.status(500).json(error))
+
+    res.send("connexion reussie")   
 }
