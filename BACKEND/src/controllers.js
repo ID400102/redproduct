@@ -1,5 +1,6 @@
 const express = require("express");
-
+const User = require("./models")
+const userValidation = require("./validation")
 
 /**
  * 
@@ -7,7 +8,15 @@ const express = require("express");
  * @param {express.Response} res 
  */
 exports.inscription = (req, res) => {
-    res.send("inscription reussie")
+
+    // ** recuperer les donnees 
+    const {body} = req
+    // ** recuperer les donnees 
+    const {error} = userValidation(body)
+    if(error) return res.status(401).json(error.details[0].message)
+
+    console.log(body);
+    res.json(body)
 }
 
 /**

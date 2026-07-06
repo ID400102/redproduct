@@ -7,5 +7,6 @@ const app = express();
 
 db()
 
+app.use(express.json())
 app.use(routes)
 app.listen(port, () => console.log("le serveur a demarre au port " + port));
