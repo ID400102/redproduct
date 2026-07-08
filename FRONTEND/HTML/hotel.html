@@ -11,20 +11,23 @@
     <!-- Container -->
     <div class="flex flex-row lg:flex-row">
       <aside
-        class="hidden inset-0 bg-[#1E2022] bg-[url('/etc/motif.png')] bg-blend-multiply bg-cover bg-center bg-no-repeat left-0 text-white flex lg:block flex-col justify-between"
+        class="inset-0 bg-[#1E2022] bg-[url('/etc/motif.png')] bg-blend-multiply bg-cover bg-center bg-no-repeat text-white flex md:flex-col h-screen justify-between md:justify-start md:w-64"
       >
         <!-- Top bar / Sidebar header -->
         <div
           class="flex items-start gap-2 w-full md:items-center block p-4 md:p-6"
         >
-          <div class="flex gap-2 sm: flex-row justify-between items-center">
+          <button class="md:hidden text-white focus:outline-none">☰</button>
+          <div
+            class="hidden flex gap-2 sm: flex-row justify-between items-center"
+          >
             <img src="/etc/logo.png" alt="logo redproduct " />
             <h1 class="text-xl md:text-2xl font-bold">RED PRODUCT</h1>
           </div>
           <!-- Hamburger visible en mobile -->
         </div>
         <!-- Navigation (hidden on mobile by default, visible on desktop) -->
-        <nav class="lg:block space-y-2 px-6">
+        <nav class="hidden md:block space-y-2 px-6">
           <p class="md:text-3xl mb-6">Principal</p>
           <div class="flex items-center gap-2 md:text-2xl">
             <img src="/etc/dashboard.png" alt="dashboardpng" class="w-5 h-5" />
@@ -41,7 +44,7 @@
         </nav>
         <!-- Profil utilisateur -->
         <div
-          class="md:flex mb-20 mr-2 border-t border-gray-700 p-4 items-center space-x-3 mt-auto"
+          class="hidden md:flex mb-20 mr-2 border-t border-gray-700 p-4 items-center space-x-3 mt-auto"
         >
           <div
             class="w-10 h-10 bg-[url('/etc/badiane.jpg')] rounded-full"
@@ -112,7 +115,7 @@
             id="hotelModal"
             class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50"
           >
-            <div class="relative bg-white rounded-lg shadow-lg w-1/2 p-6">
+            <div class="relative bg-white rounded-lg shadow-lg p-6 w-[80%] h-[80%] lg: w-[50%]">
               <!-- Bouton fermer -->
               <button
                 onclick="
@@ -208,22 +211,8 @@
                   <div
                     class="border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center py-10 cursor-pointer hover:border-[#A88ADD] transition"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2001/svg"
-                      class="h-10 w-10 text-gray-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M3 7h18M3 12h18M3 17h18"
-                      />
-                    </svg>
                     <p class="text-gray-500 mt-2">Ajouter une photo</p>
-                    <input type="file" accept="image/*" class="hidden" />
+                    <input type="file" accept="image/*" />
                   </div>
                 </div>
 
