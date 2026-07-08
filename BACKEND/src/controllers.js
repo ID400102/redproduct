@@ -1,6 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
-const user = require("./models")
+const jwt = require("jsonwebtoken");
+const user = require("./models");
 const userValidation = require("./validation")
 
 /**
@@ -48,7 +49,7 @@ exports.connexion = (req, res) => {
     // console.log(req.body);
     
     // trouver les users dans la base de donnees
-    user.find({email : email})
+    user.findOne({email : email})
     .then(user => {
         if(!user) return res.status(404).json({msg : "L'utilisateur n'a pas ete retrouve"})
         
@@ -56,11 +57,15 @@ exports.connexion = (req, res) => {
         bcrypt.compare(password, user.password)
         .then(match => {
             if(!match) return res.status(500).json({msg : "erreur serveur"})
+                res.status(200).json({
+                    email : user.email,
+                    id : user._id,
+                    token : jwt.sign({id : user._id}, "Secret_KEY", {expiresIn : "12h"})
+            })
             
         })
         .catch(error => res.status(500).json(error))
     })
     .catch(error => res.status(500).json(error))
 
-    res.send("connexion reussie")   
 }
