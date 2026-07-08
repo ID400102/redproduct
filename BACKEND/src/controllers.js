@@ -60,7 +60,7 @@ exports.connexion = (req, res) => {
                 res.status(200).json({
                     email : user.email,
                     id : user._id,
-                    token : jwt.sign({id : user._id}, "Secret_KEY", {expiresIn : "12h"})
+                    token : jwt.sign({id : user._id}, "SECRET_KEY", {expiresIn : "12h"})
             })
             
         })
